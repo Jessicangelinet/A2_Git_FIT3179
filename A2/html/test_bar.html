@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vega Visualization</title>
+    <!-- Include Vega libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-7 col-10 order-xl-1 order-2 text-center">
+                <hr class="p-3 m-0">
+                <figure class="figure">
+                    <div id="mobility"></div>
+                    <script type="text/javascript">
+                        var spec2 = "../vega/X_top10Bar.vg.js";
+                        vegaEmbed('#mobility', spec2).then(function (result) {
+                            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+                        }).catch(console.error);
+                    </script>
+                </figure>
+                <hr>
+                <figure class="figure-caption text-left">
+                    Source:
+                    <a href="https://data.melbourne.vic.gov.au/Transport/Pedestrian-Counting-System-2009-to-Present-counts-/b2ak-trbp">
+                        Malaysia gov
+                    </a>
+                </figure>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

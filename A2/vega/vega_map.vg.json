@@ -1,0 +1,75 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Global vs Malaysia Population 2023",
+  "width": 700,
+  "height": 400,
+  "projection": {
+    "type": "equalEarth"
+  },
+  "layer": [
+    {
+      "data": {"sphere": true},
+      "mark": {"type": "geoshape", "fill": "lightblue"}
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/2_symbol_map/js/WorldMapWithGraticules.topojson",
+        "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
+      },
+      "mark": {"type": "geoshape", "fill": "lightyellow", "stroke": "grey"}
+    },
+    {
+      "data": {
+        "graticule": {"step": [30, 30]}
+      },
+      "mark": {"type": "geoshape", "stroke": "grey", "strokeWidth": 0.5}
+    },
+    {
+      "data": {
+        "url": "../data/countries_lat_long.csv"
+      },
+      "mark": {"type": "circle", "tooltip": {"content": "data"}, "opacity": 0.4},
+      "encoding": {
+        "tooltip": [
+          {
+            "field": "CountryName",
+            "title": "Country"
+          },
+          {
+            "field": "Population",
+            "type": "quantitative",
+            "title": "Population"
+          }
+        ],
+        "longitude": {"field": "longitude", "type": "quantitative"},
+        "latitude": {"field": "latitude", "type": "quantitative"},
+        "size": {
+          "field": "Population",
+          "type": "quantitative",
+          "title": "Population",
+          "scale": {"domain": [1, 150000000], "range": [10, 1000]}
+        },
+        "color": {
+          "condition": {
+            "test": "'Malaysia' === datum.CountryName",
+            "value": "red"
+          },
+          "value": "grey"
+        }
+      }
+    }
+  ],
+  "legend": {
+          "field": "CountryName",
+          "type": "nominal",
+          "scale": {
+            "domain": ["Malaysia"],
+            "range": ["red", "lightgreen"]
+          },
+          "legend": {
+            "title": "Country Color",
+            "values": ["Malaysia", "Other Countries"],
+            "labelExpr": "datum.label === 'Malaysia' ? 'Malaysia' : 'Other Countries'"
+          }
+  }
+}

@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
-  "description": "Dataviz by David Bacci: https://www.linkedin.com/in/davbacci/",
+  "description": "Dataviz by Jessica Angeline Tjandra: https://www.linkedin.com/in/davbacci/",
   "autosize": "pad",
   "width": {"signal": "group1Width+group2Width+group3Width"},
   "height": 600,
