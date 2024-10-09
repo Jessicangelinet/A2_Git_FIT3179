@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+
+  <!-- CSS file -->
+  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+
+</head>
+
+<body>
+
+  <div id="spider_map"></div>
+  <h1>FIT3179 A2</h1>
+
+  <script type="text/javascript">
+
+    // script got overwrite by the last one
+    
+    var spec2 = "../vega/radarSpider.vg.js";
+    vegaEmbed('#spider_map', spec2).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    var spec2 = "../vega/X_top10Bar.vg.js";
+    vegaEmbed('#spider_map', spec2).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    
+  </script>
+
+  <div id="chart-area"></div>
+  <script src='https://www.gstatic.com/charts/loader.js'></script>
+
+  <script src="../vega/radarSpider.vg.js"></script>
+
+  <div id="spider_map"></div>
+
+  
+  <h1>FIT3179 A2</h1>
+
+  <script type="text/javascript">
+    
+    var spec2 = "../vega/sankey.vg.js";
+    vegaEmbed('#spider_map', spec2).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+  </script>
+  
+
+</body>
+
+</html>
