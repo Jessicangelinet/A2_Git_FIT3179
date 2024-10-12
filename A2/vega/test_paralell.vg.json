@@ -1,0 +1,39 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "hconcat": [
+      {
+        "data": {
+          "values": [
+            {"category": "A", "group": "Females", "value": 1.2},
+            {"category": "A", "group": "Males", "value": 1.5},
+            {"category": "B", "group": "Females", "value": 2.3},
+            {"category": "B", "group": "Males", "value": 2.1}
+          ]
+        },
+        "mark": "bar",
+        "encoding": {
+          "x": {"field": "category", "type": "nominal"},
+          "y": {"field": "value", "type": "quantitative"},
+          "color": {"field": "group", "type": "nominal"}
+        }
+      },
+      {
+        "data": {
+          "values": [
+            {"category": "A", "Females": 1.2, "Males": 1.5},
+            {"category": "B", "Females": 2.3, "Males": 2.1}
+          ]
+        },
+        "mark": "line",
+        "encoding": {
+          "x": {"field": "category", "type": "nominal"},
+          "y": {"field": "value", "type": "quantitative"},
+          "color": {"field": "group", "type": "nominal"}
+        },
+        "transform": [
+          {"fold": ["Females", "Males"], "as": ["group", "value"]}
+        ]
+      }
+    ]
+  }
+  
