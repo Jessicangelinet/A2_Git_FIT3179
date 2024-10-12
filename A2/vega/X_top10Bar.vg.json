@@ -14,7 +14,7 @@
   "data": [
     {
       "name": "table",
-      "url": "../A2_data/FoodConsumptionStatisticsofMalaysia.csv",
+      "url": "https://raw.githubusercontent.com/Jessicangelinet/A2_Git_FIT3179/refs/heads/main/A2/A2_data/FoodConsumptionStatisticsofMalaysia.csv",
       "format": {"type": "csv", "parse": {"Estimated Population": "number"}},
       "transform": [
         {

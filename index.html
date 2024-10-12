@@ -45,7 +45,14 @@
             height: 100%;
             background: rgba(0, 0, 0, 0.10); /* Semi-transparent dark layer */
             z-index: -1; /* Ensure the pseudo-element is behind the content but above the blurred background */
-        }        
+        }  
+        
+        .chart {
+            display: inline-block;
+            width: 250px;
+            height: 300px;
+            padding: 0px;
+        }
     </style>
 </head>
 <body>
@@ -70,8 +77,6 @@
                                     <p style="word-wrap: break-word;">
                                         Do you ever feel fatigued or low on energy and you simply can't tell why do you sometimes feel like you simply can't concentrate?
                                         Well, there could be many causes for this but most often the problem persists because the food you're eating is not actually fueling your body now let’s see the diet of malaysia.
-
-                                    
                                     </p>
                                 </div>
                             </div>
@@ -88,12 +93,10 @@
                                         <figure class="figure">
                                             <div id="airquality"></div>
                                             <script type="text/javascript">
-    
                                                 var spec2 = "A2/vega/vega_map.vg.json";
                                                 vegaEmbed('#airquality', spec2).then(function (result) {
                                                   // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
                                                 }).catch(console.error);
-                                                
                                               </script>
                                         </figure>
                                         <figure class="figure-caption text-right">
@@ -114,34 +117,29 @@
                         </div>
                     </div>
                     
-
                     <br>
                     <div class="card border-0 shadow-lg">
                         <div class="card-body pt-4">
                             <div class="row justify-content-center">
-                                <div class="col-xl-3 col-10 order-xl-2 order-1 text-justify">
-                                    <h4 class="text-right">50% Most Consumed food is unhealthy </h4>
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-    
-
-                                </div>
-                                <div class="col-xl-7 col-10 order-xl-1 order-2 text-center">
-                                    <hr class="p-3 m-0">
-                                    <figure class="figure">
-                                        <div id="mobility"></div>
-
-                                        <script type="text/javascript">
-                                            var spec2 = "A2/vega/X_top10Bar.vg.js";
-                                            vegaEmbed('#mobility', spec2).then(function (result) {
-                                              // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-                                            }).catch(console.error);
-                                        </script>
-                                    </figure>
+                                <div class="col-10">
+                                    <table class="table">
+                                        <tr>
+                                            <td>
+                                                <div id="mobility"></div>
+                                                <script type="text/javascript">
+                                                    var spec2 = "A2/vega/X_top10Bar.vg.json";
+                                                    vegaEmbed('#mobility', spec2).then(function (result) {
+                                                      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+                                                    }).catch(console.error);
+                                                </script>
+                                            </td>
+                                            <td>
+                                                <h4 class="text-right">50% Most Consumed food is unhealthy</h4>
+                                                <div id="isotype_chart"></div>
+                                                <!-- Add your isotype chart script here -->
+                                            </td>
+                                        </tr>
+                                    </table>
                                     <hr>
                                     <figure class="figure-caption text-left">
                                         Source:
@@ -149,12 +147,7 @@
                                             Malaysia gov
                                         </a>
                                     </figure>
-
-
-                                    
                                 </div>
-
-                                
                             </div>
                         </div>
                     </div>
@@ -166,12 +159,12 @@
                                 <div class="col-10">
                                     <hr>                                    
                                     <div class="text-center">
-                                        <figure class="figure">
+                                        <figure class="figure text-left">
                                             <div id="airquality"></div>
                                             <div id="chart-area"></div>
                                             <script src='https://www.gstatic.com/charts/loader.js'></script>
                                             <script src="A2/vega/radarSpider.vg.js"></script>
-                                            <div id="spider_map"></div>
+                                            <div id="spider_map" style="margin: 0 auto;"></div>
                                         </figure>
                                         <figure class="figure-caption text-right">
                                             Source:
@@ -192,7 +185,7 @@
                     </div>
                     
                     <br>
-                    <div class="card border-0 shadow-lg">
+                    <div class="card border-0 shadow-lg" style="width: 1100px;">
                         <div class="card-body pt-4">
                             <div class="row justify-content-center">
                                 <div class="col-10">
@@ -203,7 +196,8 @@
                                             We need to change our diet and start eating healthy food.
                                         </p>
                                     </div>
-                                    <div id="sankey_diagram"></div>
+                                    <div id="chart-area"></div>
+                                    <div id="sankey_diagram" class="chart" style="text-align: left;"></div>
                                     <script type="text/javascript">
                                         var spec2 = "A2/vega/sankey.vg.js";
                                         vegaEmbed('#sankey_diagram', spec2).then(function (result) {
@@ -211,18 +205,10 @@
                                         }).catch(console.error);
                                     </script>
                                 </div>
-
-
-
-                                    
-                                </div>
                             </div>
                         </div>
-
-
-
-
-                        
+                    </div>
+                    
                     <br>
                     <div class="card border-0 shadow-lg">
                         <div class="card-body pt-4">
@@ -230,9 +216,7 @@
                                 <div class="col-10">
                                     <div class="justify-content-center text-justify">
                                         <h4>Conclusion</h4>
-
                                         <p>  We could go on like this for hours okay but suffice it to say there is a big difference between filling your belly and feeding yourself so pay attention to what you eat okay and avoid junk food as much as you can.
-
                                         </p>
                                     </div>
                                 </div>
@@ -243,7 +227,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>

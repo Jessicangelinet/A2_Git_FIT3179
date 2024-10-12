@@ -304,10 +304,21 @@ function addChart(title, data, color) {
   };
 
   const elem = document.createElement("div");
-  elem.setAttribute("style", "display: inline-block; width: 250px; height: 300px; padding: 20px;");
+  elem.setAttribute("style", "display: inline-block; width: 250px; height: 300px; padding: 0px;");
 
   const chart = new google.visualization.VegaChart(elem);
   chart.draw(dataTable, options);
 
   document.getElementById("chart-area").appendChild(elem);
 }
+
+// Add CSS for Flexbox layout
+const style = document.createElement('style');
+style.innerHTML = `
+  #chart-area {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+`;
+document.head.appendChild(style);

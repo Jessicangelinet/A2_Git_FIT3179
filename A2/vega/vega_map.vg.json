@@ -26,7 +26,7 @@
     },
     {
       "data": {
-        "url": "../data/countries_lat_long.csv"
+        "url": "countries_lat_long.csv"
       },
       "mark": {"type": "circle", "tooltip": {"content": "data"}, "opacity": 0.4},
       "encoding": {

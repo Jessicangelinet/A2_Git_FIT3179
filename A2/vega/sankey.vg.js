@@ -1,9 +1,9 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
   "description": "Sankey Diagram of Nutrient Information for Apples, Pineapples, Canned Sardine, Sambal Shrimp, Broccoli, Spinach, Eggs, and Dosai",
-  "width": 1000,
+  "width": 700,
   "height": 800,
-  "padding": {"bottom": 20, "left": 20, "right": 30, "top": 40},
+  "padding": {"bottom": 20, "left": 0, "right": 30, "top": 40},
   "signals": [
     {
       "name": "standardGap",
