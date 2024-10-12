@@ -3,7 +3,7 @@
   "description": "Sankey Diagram of Nutrient Information for Apples, Pineapples, Canned Sardine, Sambal Shrimp, Broccoli, Spinach, Eggs, and Dosai",
   "width": 700,
   "height": 800,
-  "padding": {"bottom": 20, "left": 0, "right": 30, "top": 40},
+  "padding": {"bottom": 20, "left": 0, "right": 0, "top": 40},
   "signals": [
     {
       "name": "standardGap",
