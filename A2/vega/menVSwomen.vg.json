@@ -1,0 +1,96 @@
+{
+    "$schema": "https://vega.github.io/schema/vega/v5.json",
+    "width": 500,
+    "height": 500,
+    "padding": 5,
+    "data": [
+      {
+        "name": "placement",
+        "values": [
+          {"x": 1, "y": 1, "category": "A", "finalIsland": "A"},
+          {"x": 2, "y": 1, "category": "B", "finalIsland": "B"},
+          {"x": 3, "y": 1, "category": "A", "finalIsland": "A"},
+          {"x": 4, "y": 1, "category": "B", "finalIsland": "B"}
+          // Add more data points as needed
+        ]
+      }
+    ],
+    "scales": [
+      {
+        "name": "x",
+        "type": "linear",
+        "round": true,
+        "nice": true,
+        "zero": true,
+        "domain": {"field": "x", "data": "placement"},
+        "range": "width"
+      },
+      {
+        "name": "y",
+        "type": "linear",
+        "round": true,
+        "nice": true,
+        "zero": true,
+        "domain": {"field": "y", "data": "placement"},
+        "range": "height"
+      },
+      {
+        "name": "color",
+        "type": "ordinal",
+        "domain": {"data": "placement", "field": "finalIsland"},
+        "range": {"scheme": "set1"}
+      }
+    ],
+    "marks": [
+      {
+        "name": "marks",
+        "type": "symbol",
+        "from": {"data": "placement"},
+        "encode": {
+          "update": {
+            "x": {"scale": "x", "field": "x"},
+            "y": {"scale": "y", "field": "y"},
+            "shape": {
+              "signal": "datum.category === 'A' ? 'M0,-5L-5,5L5,5Z' : 'M0,-5L-5,5L5,5Z'"
+            },
+            "size": {"value": 130},
+            "stroke": {"value": "grey"},
+            "tooltip": {"signal": "datum"},
+            "fill": {"scale": "color", "field": "finalIsland"}
+          }
+        }
+      },
+      {
+        "type": "text",
+        "data": [{}],
+        "encode": {
+          "update": {
+            "text": {"signal": "dataLength"},
+            "align": {"value": "center"},
+            "fill": {"value": "#595959"},
+            "x": {"signal": "width /2"},
+            "y": {"signal": "height -20"},
+            "fontSize": {"value": 60},
+            "fontWeight": {"value": "bold"},
+            "font": {"value": "sans-serif"}
+          }
+        }
+      },
+      {
+        "type": "text",
+        "data": [{}],
+        "encode": {
+          "update": {
+            "text": {"value": ["Total Seats"]},
+            "align": {"value": "center"},
+            "fill": {"value": "#595959"},
+            "x": {"signal": "width /2"},
+            "y": {"signal": "height -50"},
+            "fontSize": {"value": 20},
+            "fontWeight": {"value": "bold"},
+            "font": {"value": "sans-serif"}
+          }
+        }
+      }
+    ]
+  }

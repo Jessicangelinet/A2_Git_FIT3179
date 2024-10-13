@@ -8,8 +8,8 @@
   "signals": [
     {"name": "group1Width", "update": "130"},
     {"name": "group2Width", "update": "100"},
-    {"name": "group3Width", "update": "350"},
-    {"name": "innerScaleSize", "update": "4"}
+    {"name": "group3Width", "update": "400"},
+    {"name": "innerScaleSize", "update": "6"}
   ],
   "data": [
     {
@@ -109,7 +109,8 @@
               "value": "red"
             },
             {"value": "darkgrey"}
-          ]
+          ],
+          "tooltip": {"signal": "{'Food Item': datum['Food Item / Type Of Food'], 'Estimated Population': datum['Estimated Population']}"}
         }
       }
     },
@@ -124,12 +125,14 @@
           "fill": [
             {
               "test": "datum.rank == 4 || datum.rank == 6 || datum.rank == 9 || datum.rank == 10 || datum.rank == 12",
-              "value": "red"
+              "value": "darkred"
             },
             {
               "value": "grey"
             }
-          ]
+          ],
+          "tooltip": {"signal": "{'Food Item': datum['Food Item / Type Of Food'], 'Estimated Population': datum['Estimated Population']}"}
+
         }
       }
     },
@@ -159,7 +162,8 @@
             {"value": "grey"}
           ],
           "cornerRadiusTopRight": {"value": 3},
-          "cornerRadiusBottomRight": {"value": 3}
+          "cornerRadiusBottomRight": {"value": 3},
+          "tooltip": {"signal": "{'Food Item': datum['Food Item / Type Of Food'], 'Estimated Population': datum['Estimated Population']}"}
         }
       }
     },
@@ -189,11 +193,14 @@
           "text": {"signal": "datum.rank"},
           "fill": {"signal": "'#f1f1f1'"},
           "font": {"value": "Impact"},
-          "fontSize": {"value": 55},
-          "y": {"signal": "scale('y', datum['Food Item / Type Of Food'])+bandwidth('y')/2"},
+          "fontSize": {"value": 40},
+          "y": {"signal": "scale('y', datum['Food Item / Type Of Food']) + bandwidth('y') / 2"},
           "baseline": {"value": "middle"},
           "align": {"value": "center"},
-          "x": {"signal": "group1Width/2"}
+          "x": {"signal": "group1Width / 2"},
+          "fontWeight": {
+            "signal": "datum.rank == 4 || datum.rank == 6 || datum.rank == 9 || datum.rank == 10 || datum.rank == 12 ? 'bold' : 'normal'"
+          }
         }
       }
     },
@@ -205,29 +212,15 @@
         "update": {
           "fill": {"signal": "'white'"},
           "text": {"field": "Food Item / Type Of Food"},
-          "x": {"signal": "scale('x',datum['Estimated Population'])-20"},
-          "fontWeight": {"value": "bold"},
-          "align": {"value": "right"},
-          "y": {"signal": "scale('yInner', datum['Food Item / Type Of Food'])+bandwidth('y')/4.5"}
-        }
-      }
-    },
-    {
-      "type": "text",
-      "name": "speed",
-      "from": {"data": "names"},
-      "encode": {
-        "update": {
-          "fill": {"signal": "'white'"},
-          "text": {"signal": "datum.datum['Estimated Population']"},
-          "x": {"signal": "datum.x"},
+          "x": {"signal": "scale('x', datum['Estimated Population']) - 20"},
+          "fontSize": {"value": 26},
+          "baseline": {"value": "middle"},
           "fontWeight": {"value": "normal"},
           "align": {"value": "right"},
-          "y": {"signal": "datum.y"},
-          "dy": {"value": 10}
+          "y": {"signal": "scale('yInner', datum['Food Item / Type Of Food']) + bandwidth('yInner') / 2"}
         }
       }
     }
-  ],
+    ],
   "config": {"view": {"stroke": "red", "strokeWidth": 2}}
 }

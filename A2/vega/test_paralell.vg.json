@@ -1,39 +1,175 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "hconcat": [
-      {
-        "data": {
-          "values": [
-            {"category": "A", "group": "Females", "value": 1.2},
-            {"category": "A", "group": "Males", "value": 1.5},
-            {"category": "B", "group": "Females", "value": 2.3},
-            {"category": "B", "group": "Males", "value": 2.1}
-          ]
-        },
-        "mark": "bar",
-        "encoding": {
-          "x": {"field": "category", "type": "nominal"},
-          "y": {"field": "value", "type": "quantitative"},
-          "color": {"field": "group", "type": "nominal"}
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "background": "white",
+  "padding": 5,
+  "width": 600,
+  "height": 400,
+  "title": {"text": "Bump Chart for Causes of Deaths in Malaysia (2018-2021)", "frame": "group"},
+  "style": "cell",
+  "data": [
+    {
+      "name": "data",
+      "values": [
+        {"year": 2018, "cause": "Ischaemic heart disease", "rate": 111.61},
+        {"year": 2018, "cause": "Stroke", "rate": 69.1},
+        {"year": 2018, "cause": "Lower respiratory infections", "rate": 60.81},
+        {"year": 2018, "cause": "Road injury", "rate": 19.65},
+        {"year": 2018, "cause": "Diabetes mellitus", "rate": 15.09},
+        {"year": 2018, "cause": "Back and neck pain", "rate": 0},
+        {"year": 2018, "cause": "Kidney diseases", "rate": 22.22},
+        {"year": 2018, "cause": "Skin diseases", "rate": 6.12},
+        {"year": 2018, "cause": "Depressive disorders", "rate": 0},
+        {"year": 2018, "cause": "Migraine", "rate": 0},
+        {"year": 2019, "cause": "Ischaemic heart disease", "rate": 112.34},
+        {"year": 2019, "cause": "Stroke", "rate": 69.54},
+        {"year": 2019, "cause": "Lower respiratory infections", "rate": 60.83},
+        {"year": 2019, "cause": "Road injury", "rate": 19.05},
+        {"year": 2019, "cause": "Diabetes mellitus", "rate": 15.49},
+        {"year": 2019, "cause": "Back and neck pain", "rate": 0},
+        {"year": 2019, "cause": "Kidney diseases", "rate": 22.78},
+        {"year": 2019, "cause": "Skin diseases", "rate": 6.2},
+        {"year": 2019, "cause": "Depressive disorders", "rate": 0},
+        {"year": 2019, "cause": "Migraine", "rate": 0},
+        {"year": 2020, "cause": "Ischaemic heart disease", "rate": 96.92},
+        {"year": 2020, "cause": "Stroke", "rate": 59.75},
+        {"year": 2020, "cause": "Lower respiratory infections", "rate": 48.91},
+        {"year": 2020, "cause": "Road injury", "rate": 14.07},
+        {"year": 2020, "cause": "Diabetes mellitus", "rate": 13.52},
+        {"year": 2020, "cause": "Back and neck pain", "rate": 0},
+        {"year": 2020, "cause": "Kidney diseases", "rate": 19.66},
+        {"year": 2020, "cause": "Skin diseases", "rate": 5.34},
+        {"year": 2020, "cause": "Depressive disorders", "rate": 0},
+        {"year": 2020, "cause": "Migraine", "rate": 0},
+        {"year": 2021, "cause": "Ischaemic heart disease", "rate": 137.62},
+        {"year": 2021, "cause": "COVID-19", "rate": 98.66},
+        {"year": 2021, "cause": "Stroke", "rate": 69.08},
+        {"year": 2021, "cause": "Lower respiratory infections", "rate": 57.22},
+        {"year": 2021, "cause": "Road injury", "rate": 21.93},
+        {"year": 2021, "cause": "Diabetes mellitus", "rate": 14.49},
+        {"year": 2021, "cause": "Kidney diseases", "rate": 22.7},
+        {"year": 2021, "cause": "Cirrhosis of the liver", "rate": 21.84},
+        {"year": 2021, "cause": "Skin diseases", "rate": 5.04},
+        {"year": 2021, "cause": "Chronic obstructive pulmonary disease", "rate": 25.64}
+      ]
+    },
+    {
+      "name": "data_0",
+      "source": "data",
+      "transform": [
+        {
+          "type": "window",
+          "params": [null],
+          "as": ["rank"],
+          "ops": ["rank"],
+          "fields": [""],
+          "sort": {"field": ["rate"], "order": ["descending"]},
+          "groupby": ["year"]
+        }
+      ]
+    }
+  ],
+  "marks": [
+    {
+      "name": "layer_0_pathgroup",
+      "type": "group",
+      "from": {
+        "facet": {
+          "name": "faceted_path_layer_0_main",
+          "data": "data_0",
+          "groupby": ["cause"]
         }
       },
-      {
-        "data": {
-          "values": [
-            {"category": "A", "Females": 1.2, "Males": 1.5},
-            {"category": "B", "Females": 2.3, "Males": 2.1}
-          ]
-        },
-        "mark": "line",
-        "encoding": {
-          "x": {"field": "category", "type": "nominal"},
-          "y": {"field": "value", "type": "quantitative"},
-          "color": {"field": "group", "type": "nominal"}
-        },
-        "transform": [
-          {"fold": ["Females", "Males"], "as": ["group", "value"]}
-        ]
+      "encode": {
+        "update": {
+          "width": {"field": {"group": "width"}},
+          "height": {"field": {"group": "height"}}
+        }
+      },
+      "marks": [
+        {
+          "name": "layer_0_marks",
+          "type": "line",
+          "style": ["line"],
+          "sort": {"field": "datum[\"year\"]"},
+          "from": {"data": "faceted_path_layer_0_main"},
+          "encode": {
+            "update": {
+              "stroke": {"scale": "color", "field": "cause"},
+              "description": {
+                "signal": "\"year: \" + datum[\"year\"] + \"; rank: \" + datum[\"rank\"] + \"; cause: \" + datum[\"cause\"]"
+              },
+              "x": {"scale": "x", "field": "year"},
+              "y": {"scale": "y", "field": "rank"}
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "layer_1_marks",
+      "type": "symbol",
+      "style": ["point"],
+      "from": {"data": "data_0"},
+      "encode": {
+        "update": {
+          "opacity": {"value": 1},
+          "fill": {"scale": "color", "field": "cause"},
+          "ariaRoleDescription": {"value": "point"},
+          "description": {
+            "signal": "\"year: \" + datum[\"year\"] + \"; rank: \" + datum[\"rank\"] + \"; cause: \" + datum[\"cause\"]"
+          },
+          "x": {"scale": "x", "field": "year"},
+          "y": {"scale": "y", "field": "rank"}
+        }
       }
-    ]
-  }
-  
+    }
+  ],
+  "scales": [
+    {
+      "name": "x",
+      "type": "point",
+      "domain": {"data": "data_0", "field": "year", "sort": true},
+      "range": [0, {"signal": "width"}],
+      "padding": 0.5
+    },
+    {
+      "name": "y",
+      "type": "point",
+      "domain": {"data": "data_0", "field": "rank", "sort": true},
+      "range": [0, {"signal": "height"}],
+      "padding": 0.5
+    },
+    {
+      "name": "color",
+      "type": "ordinal",
+      "domain": {"data": "data_0", "field": "cause", "sort": {"field": "rank", "order": "ascending"}},
+      "range": "category"
+    }
+  ],
+  "axes": [
+    {
+      "scale": "x",
+      "orient": "bottom",
+      "grid": false,
+      "title": "Year",
+      "labelOverlap": true,
+      "zindex": 0
+    },
+    {
+      "scale": "y",
+      "orient": "left",
+      "grid": false,
+      "title": "Rank",
+      "zindex": 0
+    }
+  ],
+  "legends": [
+    {
+      "stroke": "color",
+      "symbolType": "circle",
+      "title": "Cause",
+      "fill": "color",
+      "encode": {"symbols": {"update": {"opacity": {"value": 1}}}}
+    }
+  ]
+}
