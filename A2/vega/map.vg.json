@@ -39,6 +39,7 @@
             "lookup": "properties.NAME",
             "from": {
               "data": {
+                // "url": "..\A2_data\worldDiabetes.csv",
                 "url": "https://raw.githubusercontent.com/Jessicangelinet/A2_Git_FIT3179/refs/heads/main/A2/A2_data/worldDiabetes.csv",
                 "format": {"type": "csv"}
               },
