@@ -36,16 +36,16 @@ Cameroon,CMR,2021,5.5
 Canada,CAN,2021,7.7
 Cape Verde,CPV,2021,2.1
 Cayman Islands,CYM,2021,13
-Central African Republic,CAF,2021,5.8
+Central African Rep.,CAF,2021,5.8
 Chad,TCD,2021,5.8
 Channel Islands,OWID_CIS,2021,6.3
 Chile,CHL,2021,10.8
 China,CHN,2021,10.6
 Colombia,COL,2021,8.3
 Comoros,COM,2021,11.7
-Congo,COG,2021,5.5
+Dem.  Rep. Congo,COG,2021,5.5
 Costa Rica,CRI,2021,8.8
-Cote d'Ivoire,CIV,2021,2.1
+Côte d'Ivoire,CIV,2021,2.1
 Croatia,HRV,2021,4.8
 Cuba,CUB,2021,7.6
 Curacao,CUW,2021,11.7
@@ -186,7 +186,7 @@ Singapore,SGP,2021,11.6
 Slovakia,SVK,2021,5.8
 Slovenia,SVN,2021,5.8
 Solomon Islands,SLB,2021,19.8
-Somalia,SOM,2021,6.5
+Somaliland,SOM,2021,6.5
 South Africa,ZAF,2021,10.8
 South Asia (WB),,2021,12.288757
 South Korea,KOR,2021,6.8
@@ -194,7 +194,7 @@ South Sudan,SSD,2021,6.5
 Spain,ESP,2021,10.3
 Sri Lanka,LKA,2021,11.3
 Sub-Saharan Africa (WB),,2021,5.794512
-Sudan,SDN,2021,18.9
+S. Sudan,SDN,2021,18.9
 Suriname,SUR,2021,12.7
 Sweden,SWE,2021,5
 Switzerland,CHE,2021,4.6
@@ -213,7 +213,7 @@ Uganda,UGA,2021,4.6
 Ukraine,UKR,2021,5.6
 United Arab Emirates,ARE,2021,16.4
 United Kingdom,GBR,2021,6.3
-United States,USA,2021,10.7
+United States of America,USA,2021,10.7
 United States Virgin Islands,VIR,2021,12.4
 Upper-middle-income countries,,2021,10.2985735
 Uruguay,URY,2021,9

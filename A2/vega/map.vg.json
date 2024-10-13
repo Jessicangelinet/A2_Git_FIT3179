@@ -31,7 +31,7 @@
       {
         "mark": {
           "type": "geoshape",
-          "stroke": "white",
+          "stroke": "grey",
           "strokeWidth": 0.5
         },
         "transform": [
@@ -48,11 +48,14 @@
           }
         ],
         "encoding": {
-          "color": {
-            "field": "Diabetes prevalence (% of population ages 20 to 79)",
-            "type": "quantitative",
-            "scale": {
-              "scheme": "reds"
+            "color": {
+              "field": "Diabetes prevalence (% of population ages 20 to 79)",
+              "type": "quantitative",
+              "scale": {
+                "domain": [0, 2, 4, 6, 8, 10, 12.5, 15, 17.5, 20],
+                "range": [
+                    "#FFFFD7", "#FFFFB2", "#FFE58D", "#FFD769", "#FFC84D", "#FFA033", "#FF871C", "#FF6D00", "#FF5400", "#FF3A00", "#FF2000", "#FF0000"
+                  ]
             }
           },
           "tooltip": [
@@ -63,7 +66,7 @@
       },
       {
         "data": {
-          "url": "https://raw.githubusercontent.com/Jessicangelinet/A2_Git_FIT3179/refs/heads/main/A2/A2_data/worldDiabetes.csv",
+          "url": "https://raw.githubusercontent.com/Jessicangelinet/A2_Git_FIT3179/refs/heads/main/A2/A2_data/oceans.topojson",
           "format": {"type": "topojson", "feature": "oceans"}
         },
         "mark": {
@@ -73,13 +76,13 @@
       },
       {
         "data": {
-          "url": "https://raw.githubusercontent.com/lauyunxian/3179_as2/main/map_data/WorldMapWithGraticules.topojson",
+          "url": "https://raw.githubusercontent.com/Jessicangelinet/A2_Git_FIT3179/refs/heads/main/A2/A2_data/WorldMapWithGraticules.topojson",
           "format": {"type": "topojson", "feature": "ne_110m_graticules_30"}
         },
         "mark": {
           "type": "geoshape",
           "fill": null,
-          "stroke": "lightgray"
+          "stroke": "lightgrey"
         }
       }
     ]
