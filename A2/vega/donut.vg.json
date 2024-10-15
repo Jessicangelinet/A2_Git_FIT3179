@@ -1,0 +1,67 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "autosize": {"resize": true},
+    "background": "transparent",
+    "description": "A simple donut chart with embedded data.",
+    "params": [
+      {
+        "name": "yearSelection",
+        "value": 2020,
+        "bind": {
+          "input": "range",
+          "min": 2020,
+          "max": 2023,
+          "step": 1,
+          "name": "Year: "
+        }
+      }
+    ],
+    "vconcat": [
+      {
+        "data": {
+          "url": "A2/A2_data/National_Diabetes_Registry_Report.csv"
+        },
+        "transform": [
+          {
+            "filter": "datum.year == yearSelection"
+          }
+        ],
+        "layer": [
+          {
+            "mark": {"type": "arc", "radius": 140, "innerRadius": 80},
+            "encoding": {
+              "theta": {"field": "%", "type": "quantitative"},
+              "color": {
+                "field": "sex",
+                "type": "nominal",
+                "scale": {
+                  "domain": ["male", "female"],
+                  "range": ["#1f77b4", "#ff7f0e"]
+                },
+                "legend": {
+                  "title": "Sex",
+                  "orient": "top-left",
+                  "offset": -90,
+                  "labelFontSize": 14,
+                  "titleFontSize": 16
+                }
+              },
+              "tooltip": [
+                {"field": "sex", "type": "nominal", "title": "Sex"},
+                {"field": "%", "type": "quantitative", "title": "Percentage", "format": ".2f"}
+              ]
+            }
+          },
+          {
+            "mark": {"type": "text", "fontSize": 20, "fontWeight": "bold"},
+            "encoding": {
+              "text": {"field": "%", "type": "quantitative", "format": ".2f"},
+              "theta": {"field": "%", "type": "quantitative", "stack": true},
+              "radius": {"value": 165},
+              "color": {"value": "black"}
+            }
+          }
+        ]
+      }
+    ]
+  }

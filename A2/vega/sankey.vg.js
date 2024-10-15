@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
   "description": "Sankey Diagram of Nutrient Information for Apples, Pineapples, Canned Sardine, Sambal Shrimp, Broccoli, Spinach, Eggs, and Dosai",
-  "width": 850,
-  "height": 800,
+  "width": 800,
+  "height": 680,
   "padding": {"bottom": 20, "left": 0, "right": 20, "top": 0},
   "signals": [
     {
@@ -50,7 +50,7 @@
         {"category": "Thiamin (B1)", "stack": 5, "sort": 5, "labels": "left"},
         {"category": "Riboflavin (B2)", "stack": 5, "sort": 6, "labels": "left"},
         {"category": "Niacin (B3)", "stack": 5, "sort": 7, "labels": "left"},
-        {"category": "Ascorbic Acid (Vitamin C)", "stack": 5, "sort": 8, "labels": "left"},
+        {"category": "Vitamin C", "stack": 5, "sort": 8, "labels": "left"},
         {"category": "Calcium (Ca+)", "stack": 5, "sort": 9, "labels": "left"},
         {"category": "Phosphorus (P+)", "stack": 5, "sort": 10, "labels": "left"},
         {"category": "Potassium (K+)", "stack": 5, "sort": 11, "labels": "left"},
@@ -83,8 +83,8 @@
         {"source": "Vitamins", "destination": "Water-Soluble", "value": 1.146},
         {"source": "Minerals", "destination": "Macro-Minerals", "value": 1.14},
         {"source": "Minerals", "destination": "Micro-Minerals", "value": 1.18},
-        {"source": "Fat-Soluble", "destination": "Vitamin A", "value": 1.24},
-        {"source": "Water-Soluble", "destination": "Ascorbic Acid (Vitamin C)", "value": 1.146},
+        {"source": "Fat-Soluble", "destination": "Vitamin A", "value": 2.24},
+        {"source": "Water-Soluble", "destination": "Vitamin C", "value": 1.146},
         {"source": "Macro-Minerals", "destination": "Calcium (Ca+)", "value": 1.33},
         {"source": "Macro-Minerals", "destination": "Phosphorus (P+)", "value": 1.15},
         {"source": "Macro-Minerals", "destination": "Potassium (K+)", "value": 1.187},
@@ -345,7 +345,9 @@
           "height": {"signal": "0"},
           "fillOpacity": {"signal": "0.1"}
         }
-      },
+      }
+      
+      ,
       "marks": [
         {
           "type": "text",
@@ -356,7 +358,7 @@
               "x": {"value": 0},
               "y": {"value": -2},
               "text": {"field": "name"},
-              "align": {"signal": "datum.labels=='left'?'right':'left'"},
+              "align": {"signal": "datum.labels=='right'?'right':'left'"},
               "fontWeight": {"value": "bold"}
             }
           }
@@ -370,7 +372,7 @@
               "x": {"value": 0},
               "y": {"value": 12},
               "text": {"signal": " format(datum.value, '')"},
-              "align": {"signal": "datum.labels=='left'?'right':'left'"}
+              "align": {"signal": "datum.labels=='right'?'right':'left'"}
             }
           }
         }
@@ -387,33 +389,15 @@
           "y": {"field": "bounds.y1", "offset": -2},
           "y2": {"field": "bounds.y2", "offset": 2},
           "fill": {"value": "white"},
-          "opacity": {"value": 0.0},
-          "cornerRadius": {"value": 4}
+          "opacity": {"value": 0.37},
+          "cornerRadius": {"value": 6}
         }
       }
     }
     
     
-    ,
-    {
-      "type": "text",
-      "data": [{}],
-      "encode": {
-        "update": {
-          "text": {
-            "value": [
-              "Source: Nutrition Facts by https://myfcd.moh.gov.my/"
-            ]
-          },
-          "align": {"value": "left"},
-          "lineHeight": {"value": 16},
-          "fill": {"value": "#595959"},
-          "x": {"signal": "-150"},
-          "y": {"signal": "height +70"},
-          "fontSize": {"value": 10}
-        }
-      }
-    }
+    
+  
 
   ]
   
