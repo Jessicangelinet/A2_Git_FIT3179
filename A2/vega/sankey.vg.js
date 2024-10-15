@@ -1,9 +1,9 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
   "description": "Sankey Diagram of Nutrient Information for Apples, Pineapples, Canned Sardine, Sambal Shrimp, Broccoli, Spinach, Eggs, and Dosai",
-  "width": 700,
+  "width": 850,
   "height": 800,
-  "padding": {"bottom": 20, "left": 0, "right": 0, "top": 40},
+  "padding": {"bottom": 20, "left": 0, "right": 20, "top": 0},
   "signals": [
     {
       "name": "standardGap",
@@ -20,18 +20,18 @@
     {
       "name": "input",
       "values": [
-        {"category": "Apple", "stack": 1, "sort": 1, "labels": "left"},
-        {"category": "Pineapple", "stack": 1, "sort": 2, "labels": "left"},
-        {"category": "Canned Sardine", "stack": 1, "sort": 3, "labels": "left"},
-        {"category": "Sambal Shrimp", "stack": 1, "sort": 4, "labels": "left"},
-        {"category": "Broccoli", "stack": 1, "sort": 5, "labels": "left"},
-        {"category": "Spinach", "stack": 1, "sort": 6, "labels": "left"},
-        {"category": "Eggs", "stack": 1, "sort": 7, "labels": "left"},
-        {"category": "Dosai", "stack": 1, "sort": 8, "labels": "left"},
+        {"category": "Dosai", "stack": 1, "sort": 1, "labels": "left"},
+        {"category": "Apple", "stack": 1, "sort": 2, "labels": "left"},
+        {"category": "Pineapple", "stack": 1, "sort": 3, "labels": "left"},
+        {"category": "Canned Sardine", "stack": 1, "sort": 4, "labels": "left"},
+        {"category": "Eggs", "stack": 1, "sort": 5, "labels": "left"},
+        {"category": "Broccoli", "stack": 1, "sort": 6, "labels": "left"},
+        {"category": "Sambal Shrimp", "stack": 1, "sort": 7, "labels": "left"},
+        {"category": "Spinach", "stack": 1, "sort": 8, "labels": "left"},
         {"category": "Macro-nutrients", "stack": 2, "sort": 1, "labels": "left"},
         {"category": "Micro-nutrients", "stack": 2, "sort": 2, "labels": "left"},
         {"category": "Carbohydrate", "stack": 3, "sort": 1, "labels": "left"},
-        {"category": "Dietary Fiber", "stack": 3, "sort": 2, "labels": "left"},
+        {"category": "Dietary Fiber", "stack": 4, "sort": 0, "labels": "left"},
         {"category": "Sugars", "stack": 3, "sort": 3, "labels": "left"},
         {"category": "Protein", "stack": 3, "sort": 4, "labels": "left"},
         {"category": "Fat", "stack": 3, "sort": 5, "labels": "left"},
@@ -73,25 +73,25 @@
         {"source": "Eggs", "destination": "Micro-nutrients", "value": 2.4},
         {"source": "Dosai", "destination": "Macro-nutrients", "value": 34.2},
         {"source": "Dosai", "destination": "Micro-nutrients", "value": 0.437},
-        {"source": "Macro-nutrients", "destination": "Carbohydrate", "value": 23.7},
-        {"source": "Macro-nutrients", "destination": "Dietary Fiber", "value": 2.6},
-        {"source": "Macro-nutrients", "destination": "Protein", "value": 0.5},
-        {"source": "Macro-nutrients", "destination": "Fat", "value": 0.5},
-        {"source": "Micro-nutrients", "destination": "Vitamins", "value": 0.0152},
-        {"source": "Micro-nutrients", "destination": "Minerals", "value": 0.437},
-        {"source": "Vitamins", "destination": "Fat-Soluble", "value": 0.024},
-        {"source": "Vitamins", "destination": "Water-Soluble", "value": 0.146},
-        {"source": "Minerals", "destination": "Macro-Minerals", "value": 0.14},
-        {"source": "Minerals", "destination": "Micro-Minerals", "value": 0.018},
-        {"source": "Fat-Soluble", "destination": "Vitamin A", "value": 0.024},
-        {"source": "Water-Soluble", "destination": "Ascorbic Acid (Vitamin C)", "value": 0.146},
-        {"source": "Macro-Minerals", "destination": "Calcium (Ca+)", "value": 0.033},
-        {"source": "Macro-Minerals", "destination": "Phosphorus (P+)", "value": 0.015},
-        {"source": "Macro-Minerals", "destination": "Potassium (K+)", "value": 0.187},
-        {"source": "Macro-Minerals", "destination": "Sodium (Na+)", "value": 0.032},
-        {"source": "Micro-Minerals", "destination": "Iron (Fe++)", "value": 0.016},
-        {"source": "Micro-Minerals", "destination": "Zinc (Zn++)", "value": 0.008}
-      ]
+        {"source": "Macro-nutrients", "destination": "Carbohydrate", "value": 104.2},
+        {"source": "Macro-nutrients", "destination": "Protein", "value": 24.9},
+        {"source": "Macro-nutrients", "destination": "Fat", "value": 24.9},
+        {"source": "Carbohydrate", "destination": "Dietary Fiber", "value": 8.6},
+        {"source": "Micro-nutrients", "destination": "Vitamins", "value": 2.0152},
+        {"source": "Micro-nutrients", "destination": "Minerals", "value": 3.437},
+        {"source": "Vitamins", "destination": "Fat-Soluble", "value": 2.24},
+        {"source": "Vitamins", "destination": "Water-Soluble", "value": 1.146},
+        {"source": "Minerals", "destination": "Macro-Minerals", "value": 1.14},
+        {"source": "Minerals", "destination": "Micro-Minerals", "value": 1.18},
+        {"source": "Fat-Soluble", "destination": "Vitamin A", "value": 1.24},
+        {"source": "Water-Soluble", "destination": "Ascorbic Acid (Vitamin C)", "value": 1.146},
+        {"source": "Macro-Minerals", "destination": "Calcium (Ca+)", "value": 1.33},
+        {"source": "Macro-Minerals", "destination": "Phosphorus (P+)", "value": 1.15},
+        {"source": "Macro-Minerals", "destination": "Potassium (K+)", "value": 1.187},
+        {"source": "Macro-Minerals", "destination": "Sodium (Na+)", "value": 1.32},
+        {"source": "Micro-Minerals", "destination": "Iron (Fe++)", "value": 1.16},
+        {"source": "Micro-Minerals", "destination": "Zinc (Zn++)", "value": 1.08}
+    ]
     },
     {
       "name": "stacks",
@@ -357,7 +357,7 @@
               "y": {"value": -2},
               "text": {"field": "name"},
               "align": {"signal": "datum.labels=='left'?'right':'left'"},
-              "fontWeight": {"value": "normal"}
+              "fontWeight": {"value": "bold"}
             }
           }
         },
@@ -387,11 +387,14 @@
           "y": {"field": "bounds.y1", "offset": -2},
           "y2": {"field": "bounds.y2", "offset": 2},
           "fill": {"value": "white"},
-          "opacity": {"value": 0.8},
+          "opacity": {"value": 0.0},
           "cornerRadius": {"value": 4}
         }
       }
-    },
+    }
+    
+    
+    ,
     {
       "type": "text",
       "data": [{}],
@@ -411,7 +414,10 @@
         }
       }
     }
-  ],
+
+  ]
+  
+  ,
   "config": {
     "view": {"stroke": "transparent"},
     "text": {"fontSize": 13, "fill": "#333333"}
