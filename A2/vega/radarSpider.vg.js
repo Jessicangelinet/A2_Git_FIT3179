@@ -92,7 +92,7 @@ function addChart(title, data, color) {
         "fontSize": 14,
         "dy": -8,
         "dx": {"signal": "-width/4"},
-        "subtitle": "RDI per 100g"
+        "subtitle": "per 100g"
       },
       "signals": [
         {"name": "radius", "update": "90"}

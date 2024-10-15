@@ -39,6 +39,7 @@
         {"category": "Trans Fat", "stack": 3, "sort": 7, "labels": "left"},
         {"category": "Vitamins", "stack": 3, "sort": 8, "labels": "left"},
         {"category": "Minerals", "stack": 3, "sort": 9, "labels": "left"},
+        {"category": "Other Micro0nutrients", "stack": 3, "sort": 10, "labels": "left"},
         {"category": "Fat-Soluble", "stack": 4, "sort": 1, "labels": "left"},
         {"category": "Water-Soluble", "stack": 4, "sort": 2, "labels": "left"},
         {"category": "Macro-Minerals", "stack": 4, "sort": 3, "labels": "left"},
