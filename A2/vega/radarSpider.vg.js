@@ -49,7 +49,8 @@ const tosaiDosai = [
 ];
 
 function loadCharts() {
-  const color = "#FF6347";
+  const defaultColor = "#FF6347";
+  const sardinesColor = "black";
   const chartArea = document.getElementById("chart-area");
   chartArea.innerHTML = ""; // Clear previous charts
 
@@ -63,6 +64,7 @@ function loadCharts() {
   ];
 
   charts.forEach((data, index) => {
+    const color = data[0][2] === "Canned Sardines" ? sardinesColor : defaultColor;
     addChart(data[0][2], data, color);
     if (index === 2) {
       chartArea.appendChild(document.createElement("br")); // Add a line break after the third chart
