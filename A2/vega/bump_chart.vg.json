@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega/v5.json",
   "background": "white",
   "padding": 5,
-  "width": 550,
+  "width": 500,
   "height": 300,
   "title": {"text": "Causes of Deaths in Malaysia (2016-2021)", "frame": "group"},
   "style": "None",

@@ -1,9 +1,14 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "Global Diabetes Prevalence by Country (2021)",
-  "width": 900,
+  "width": 1000,
   "height": 400,
   "background": "transparent",
+  "config": {
+    "view": {
+      "stroke": "transparent"
+    }
+  },
   "projection": {"type": "equalEarth"},
   "data": {
     "url": "https://raw.githubusercontent.com/lauyunxian/3179_as2/main/map_data/ne_110m_admin_0_countries.topojson",
