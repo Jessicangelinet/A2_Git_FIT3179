@@ -6,3 +6,16 @@
 	/*height: 1000px;
 	width: 800px;*/
 }
+
+select.year-dropdown {
+	background-color: white;
+	color: black; /* Optional: to ensure text is visible */
+	border: 1px solid #ccc; /* Optional: to add a border */
+	padding: 5px; /* Optional: to add some padding */
+	font-size: 14px; /* Optional: to set font size */
+  }
+
+
+  #donut {
+	border: none;
+  }

@@ -1,67 +1,63 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "autosize": {"resize": true},
-    "background": "transparent",
-    "description": "A simple donut chart with embedded data.",
+    "description": "A donut chart showing the percentage distribution of sex in a selected year.",
+    "width": 130,
+    "height": 200,
+    "title": {
+        "text": "Diabetes Report in Malaysia",
+        "anchor": "start", 
+        "offset": 30       
+      },
+    
+  
+    "data": {
+      "values": [
+        {"sex": "male", "%": 42.98, "year": 2020},
+        {"sex": "female", "%": 57.02, "year": 2020},
+        {"sex": "male", "%": 42.92, "year": 2023},
+        {"sex": "female", "%": 57.08, "year": 2023}
+      ]
+    },
     "params": [
       {
         "name": "yearSelection",
         "value": 2020,
         "bind": {
-          "input": "range",
-          "min": 2020,
-          "max": 2023,
-          "step": 1,
-          "name": "Year: "
+          "input": "select",
+          "options": [2020, 2023],
+          "name": "Year: ",
+          "element": "select.year-dropdown"
         }
       }
     ],
-    "vconcat": [
+    "transform": [
       {
-        "data": {
-          "url": "A2/A2_data/National_Diabetes_Registry_Report.csv"
-        },
-        "transform": [
-          {
-            "filter": "datum.year == yearSelection"
-          }
-        ],
-        "layer": [
-          {
-            "mark": {"type": "arc", "radius": 140, "innerRadius": 80},
-            "encoding": {
-              "theta": {"field": "%", "type": "quantitative"},
-              "color": {
-                "field": "sex",
-                "type": "nominal",
-                "scale": {
-                  "domain": ["male", "female"],
-                  "range": ["#1f77b4", "#ff7f0e"]
-                },
-                "legend": {
-                  "title": "Sex",
-                  "orient": "top-left",
-                  "offset": -90,
-                  "labelFontSize": 14,
-                  "titleFontSize": 16
-                }
-              },
-              "tooltip": [
-                {"field": "sex", "type": "nominal", "title": "Sex"},
-                {"field": "%", "type": "quantitative", "title": "Percentage", "format": ".2f"}
-              ]
-            }
-          },
-          {
-            "mark": {"type": "text", "fontSize": 20, "fontWeight": "bold"},
-            "encoding": {
-              "text": {"field": "%", "type": "quantitative", "format": ".2f"},
-              "theta": {"field": "%", "type": "quantitative", "stack": true},
-              "radius": {"value": 165},
-              "color": {"value": "black"}
-            }
-          }
-        ]
+        "filter": "datum.year == yearSelection"
       }
-    ]
+    ],
+    "mark": {
+      "type": "arc",
+      "innerRadius": 50,
+      "outerRadius": 100
+    },
+    "encoding": {
+      "theta": {
+        "field": "%",
+        "type": "quantitative",
+        "stack": true
+      },
+      "color": {
+        "field": "sex",
+        "type": "nominal",
+        "scale": {
+          "domain": ["male", "female"],
+          "range":  ["#FF6347", "#FF0000"]
+
+        }
+      },
+      "tooltip": [
+        {"field": "sex", "type": "nominal", "title": "Sex"},
+        {"field": "%", "type": "quantitative", "title": "Percentage", "format": ".2f"}
+      ]
+    }
   }

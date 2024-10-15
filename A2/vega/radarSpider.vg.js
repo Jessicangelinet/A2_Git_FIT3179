@@ -49,7 +49,7 @@ const tosaiDosai = [
 ];
 
 function loadCharts() {
-  const color = "#FF5733";
+  const color = "#FF6347";
   const chartArea = document.getElementById("chart-area");
   chartArea.innerHTML = ""; // Clear previous charts
 

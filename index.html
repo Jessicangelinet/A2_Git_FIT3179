@@ -2,6 +2,10 @@
 <html>
 <head>
     <title>FIT3179 - Data Visualisation 2</title>
+
+    <!-- Import custom css -->
+    <link rel="stylesheet" href="A2\css\styles.css"> <!-- Link to your CSS file -->
+
       
     <!-- Import pure.css -->
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
@@ -88,29 +92,40 @@
 
                     <br>
                     <div class="card border-0 shadow-lg" style="width: 1100px;">
-                        <div class="card-body pt-4">
-                            <div class="row justify-content-center">
-                                <div class="col-10">
-                                    <table class="table">
+                        <div class="card-body pt-4" style="padding-left: 0;">
+                          <div class="row justify-content-center">
+                            <div class="col-10" style="padding-left: 0;">
+                              <table class="table" style="margin-left: 0;">
                                         <tr>
                                             <td>
-                                                <div id="bumpChart1"></div>
+                                                <div id="bumpChart"></div>
                                                 <script type="text/javascript">
                                                     var spec2 = "A2/vega/bump_chart.vg.json";
-                                                    vegaEmbed('#bumpChart1', spec2).then(function (result) {
+                                                    vegaEmbed('#bumpChart', spec2).then(function (result) {
+                                                      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+                                                    }).catch(console.error);
+  </script>
+                                            </td>
+                                            <td >
+                                                <div id="donut" style="border: 0;"></div>
+                                                <script type="text/javascript">
+                                                    var spec2 = "A2/vega/donut.vg.json";
+                                                    vegaEmbed('#donut', spec2).then(function (result) {
                                                       // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
                                                     }).catch(console.error);
                                                 </script>
                                             </td>
-                                            <td>
-                                                <h4 class="text-right">4 of the top 10</h4> causes of death in Malaysia were related to consumption for 6 consecutive years
-                                                <p>
+                                        </tr>
+
+
+                                        <!-- <tr style="border: 0;"> -->
+                                                <h4 class="text-right" style="border: 0;">4 of the top 10</h4> causes of death in Malaysia were related to consumption for 6 consecutive years
+                                                <p style="border: 0;">
                                                     <br>
                                                     Among them, diabetes, which is largely influenced by diet, was particularly concerning. 
                                                     Diabetes ranked high for three years, before showing a slight decline in 2021.
                                                 </p>
-                                            </td>
-                                        </tr>
+                                        <!-- </tr> -->
 
 
                                     </table>
@@ -131,9 +146,9 @@
                 
                     <br>
                     <div class="card border-0 shadow-lg" style="width: 1100px;">
-                        <div class="card-body pt-4">
-                            <div class="row justify-content-center">
-                                <div class="col-10">
+                        <div class="card-body pt-4" >
+                          <div class="row justify-content-center">
+                            <div class="col-10" >
                                     <hr>                                    
                                     <div class="text-center">
                                         <!-- <figure class="figure"> -->
@@ -204,14 +219,14 @@
                     
                     <br>
                     <div class="card border-0 shadow-lg" style="width: 1100px;">
-                        <div class="card-body pt-4">
-                            <div class="row justify-content-center">
-                                <div class="col-10">
+                        <div class="card-body pt-4" style="padding-left: 0;">
+                          <div class="row justify-content-center">
+                            <div class="col-10">
                                     <hr>                                    
-                                    <div class="text-center">
+                                    <div class="text-center"  style="padding-left: 0;">
                                         <figure class="figure text-left">
-                                            <div id="spider"></div>
-                                            <div id="chart-area"></div>
+                                            <div id="spider" style="padding-left: 0;"></div>
+                                            <div id="chart-area" style="padding-left: 0;"></div>
                                             <script src='https://www.gstatic.com/charts/loader.js'></script>
                                             <script src="A2/vega/radarSpider.vg.js"></script>
                                             <div id="spider_map" style="margin: 0 auto;"></div>
