@@ -39,7 +39,7 @@
         {"category": "Trans Fat", "stack": 3, "sort": 7, "labels": "left"},
         {"category": "Vitamins", "stack": 3, "sort": 8, "labels": "left"},
         {"category": "Minerals", "stack": 3, "sort": 9, "labels": "left"},
-        {"category": "Other Micro0nutrients", "stack": 3, "sort": 10, "labels": "left"},
+        {"category": "Other", "stack": 3, "sort": 10, "labels": "left"},
         {"category": "Fat-Soluble", "stack": 4, "sort": 1, "labels": "left"},
         {"category": "Water-Soluble", "stack": 4, "sort": 2, "labels": "left"},
         {"category": "Macro-Minerals", "stack": 4, "sort": 3, "labels": "left"},
@@ -80,6 +80,7 @@
         {"source": "Carbohydrate", "destination": "Dietary Fiber", "value": 8.6},
         {"source": "Micro-nutrients", "destination": "Vitamins", "value": 2.0152},
         {"source": "Micro-nutrients", "destination": "Minerals", "value": 3.437},
+        {"source": "Micro-nutrients", "destination": "Other", "value": 7.267},
         {"source": "Vitamins", "destination": "Fat-Soluble", "value": 2.24},
         {"source": "Vitamins", "destination": "Water-Soluble", "value": 1.146},
         {"source": "Minerals", "destination": "Macro-Minerals", "value": 1.14},
@@ -92,7 +93,7 @@
         {"source": "Macro-Minerals", "destination": "Sodium (Na+)", "value": 1.32},
         {"source": "Micro-Minerals", "destination": "Iron (Fe++)", "value": 1.16},
         {"source": "Micro-Minerals", "destination": "Zinc (Zn++)", "value": 1.08}
-    ]
+      ]
     },
     {
       "name": "stacks",
